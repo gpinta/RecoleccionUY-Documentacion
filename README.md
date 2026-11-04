@@ -13,6 +13,7 @@ La infraestructura documentada utiliza servidores Windows Server para Active Dir
 - [Aplicaciones Laravel](#aplicaciones-laravel)
 - [Scripts de infraestructura](#scripts-de-infraestructura)
 - [Estructura del repositorio](#estructura-del-repositorio)
+- [Documentación complementaria y anexos](#documentación-complementaria-y-anexos)
 
 ## Estado del proyecto
 
@@ -27,12 +28,12 @@ Acceso directo a la documentación técnica de cada servidor. Los nombres de hos
 
 | Servidor | Función | Documentación |
 |---|---|---|
-| **`WS-DC-01`** | Controlador de dominio principal · AD DS, DNS y DHCP | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-WS-DC-01.md) |
-| **`WS-DC-02`** | Controlador de dominio adicional · AD DS y DNS | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-WS-DC-02.md) |
-| **`RL-FW-01`** | Firewall y enrutamiento entre segmentos | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-RL-FW-01.md) |
-| **`RL-APP-01`** | Alojamiento de aplicaciones y servicios Docker | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-RL-APP-01.md) |
-| **`RL-PROXY-01`** | Proxy inverso Nginx, WAF y TLS | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-RL-PROXY-01.md) |
-| **`RL-MON-01`** | Métricas, paneles y centralización de registros | [Ver documentación](Documentacion/Servidores/Documentacion-Tecnica-RL-MON-01.md) |
+| **`WS-DC-01`** | Controlador de dominio principal · AD DS, DNS y DHCP | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica WS-DC-01.md>) |
+| **`WS-DC-02`** | Controlador de dominio adicional · AD DS, DNS y DHCP | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica WS-DC-02.md>) |
+| **`RL-FW-01`** | Firewall y enrutamiento entre segmentos | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica RL-FW-01.md>) |
+| **`RL-APP-01`** | Alojamiento de aplicaciones y servicios Docker | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica RL-APP-01.md>) |
+| **`RL-PROXY-01`** | Proxy inverso Nginx, WAF y TLS | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica RL-PROXY-01.md>) |
+| **`RL-MON-01`** | Métricas, paneles y centralización de registros | [Ver documentación](<Documentacion/Servidores/Documentacion Tecnica RL-MON-01.md>) |
 
 ## Aplicaciones Laravel
 
@@ -40,9 +41,9 @@ Cada aplicación tiene su propio código y documentación. **No se deben mezclar
 
 | Aplicación | Proyecto | Alcance | Documentación |
 |---|---|---|---|
-| **Aplicación Ciudadana** | `recoleccion-api` | Registro y autenticación, denuncias, fotografías, reclamos y API REST. | [Ver documentación](Documentacion/RecoleccionUY/Documentacion-Tecnica-recoleccion-api.md) |
-| **Backend Administrativo** | `recoleccion-admin` | Autenticación LDAP, gestión de denuncias, flota, geografía y asignaciones. | [Ver documentación](Documentacion/RecoleccionUY/Documentacion-Tecnica-recoleccion-admin.md) |
-| **Aplicación Camiones** | `recoleccion-camiones` | Tareas asignadas, gestión operativa y evidencias fotográficas. | [Ver documentación](Documentacion/RecoleccionUY/Documentacion-Tecnica-recoleccion-camiones.md) |
+| **Aplicación Ciudadana** | `recoleccion-api` | Registro y autenticación, denuncias, fotografías, reclamos y API REST. | [Ver documentación](<Documentacion/RecoleccionUY/Documentacion Tecnica recoleccion-api.md>) |
+| **Backend Administrativo** | `recoleccion-admin` | Autenticación LDAP, gestión de denuncias, flota, geografía y asignaciones. | [Ver documentación](<Documentacion/RecoleccionUY/Documentacion Tecnica recoleccion-admin.md>) |
+| **Aplicación Camiones** | `recoleccion-camiones` | Tareas asignadas, gestión operativa y evidencias fotográficas. | [Ver documentación](<Documentacion/RecoleccionUY/Documentacion Tecnica recoleccion-camiones.md>) |
 
 ## Scripts de infraestructura
 
@@ -63,42 +64,64 @@ Los enlaces siguientes abren **carpetas**, de modo que GitHub muestre todos los 
 
 | Servidor | Carpeta de scripts |
 |---|---|
-| **`WS-DC-01`** | [Abrir scripts de Windows Server](Scripts/Windows/Windows-Server-2012-R2/) |
-| **`WS-DC-02`** | [Abrir scripts de Windows Server](Scripts/Windows/Windows-Server-2012-R2/) |
+| **`WS-DC-01`** | [Abrir scripts de Windows Server](<Scripts/Windows/Windows Server 2012 r2/>) |
+| **`WS-DC-02`** | [Abrir scripts de Windows Server](<Scripts/Windows/Windows Server 2012 r2/>) |
 
-> **Importante:** en el material recibido, `WS-DC-01` y `WS-DC-02` **no tienen carpetas de scripts individuales**. Ambos enlaces llevan a la carpeta compartida `Scripts/Windows/Windows-Server-2012-R2/`, que contiene los scripts de configuración de AD, DNS y Windows Server. Revisar los requisitos de cada script antes de ejecutarlo en un controlador concreto.
+> **Importante:** en el material recibido, `WS-DC-01` y `WS-DC-02` **no tienen carpetas de scripts individuales**. Ambos enlaces llevan a la carpeta compartida `Scripts/Windows/Windows Server 2012 r2/`, que contiene los scripts de configuración de AD, DNS y Windows Server. Revisar los requisitos de cada script antes de ejecutarlo en un controlador concreto.
 
 **Herramientas adicionales de Windows:** [Scripts auxiliares del host (`CredSSP`)](Scripts/Windows/Windows/).
 
 ## Estructura del repositorio
 
-Este `README.md` está preparado para situarse en la **raíz del repositorio**. Para que los enlaces funcionen, deben utilizarse exactamente los siguientes nombres:
+Este `README.md` se ubica en la raíz `RecoleccionUY/`. La estructura siguiente refleja las carpetas documentales y de scripts del ZIP proporcionado, incorporando la carpeta de anexos propuesta:
 
 ```text
 RecoleccionUY/
 ├── README.md
-├── Estado-del-proyecto/
-│   └── Estado-del-proyecto-RecoleccionUY.md
+├── Estado del proyecto/
+│   └── Estado del Proyecto RecoleccionUY.md
 ├── Documentacion/
+│   ├── Anexos/
+│   │   ├── Diccionario Tecnico RecoleccionUY.md
+│   │   ├── Instructivo de Despliegue RecoleccionUY.md
+│   │   ├── Orden de Despliegue RecoleccionUY.md
+│   │   └── WS-DC-XX RecoleccionUY.md
 │   ├── Servidores/
-│   │   ├── Documentacion-Tecnica-RL-APP-01.md
-│   │   ├── Documentacion-Tecnica-RL-FW-01.md
-│   │   ├── Documentacion-Tecnica-RL-MON-01.md
-│   │   ├── Documentacion-Tecnica-RL-PROXY-01.md
-│   │   ├── Documentacion-Tecnica-WS-DC-01.md
-│   │   └── Documentacion-Tecnica-WS-DC-02.md
+│   │   ├── Documentacion Tecnica RL-APP-01.md
+│   │   ├── Documentacion Tecnica RL-FW-01.md
+│   │   ├── Documentacion Tecnica RL-MON-01.md
+│   │   ├── Documentacion Tecnica RL-PROXY-01.md
+│   │   ├── Documentacion Tecnica WS-DC-01.md
+│   │   └── Documentacion Tecnica WS-DC-02.md
 │   └── RecoleccionUY/
-│       ├── Documentacion-Tecnica-recoleccion-api.md
-│       ├── Documentacion-Tecnica-recoleccion-admin.md
-│       └── Documentacion-Tecnica-recoleccion-camiones.md
+│       ├── Documentacion Tecnica recoleccion-api.md
+│       ├── Documentacion Tecnica recoleccion-admin.md
+│       └── Documentacion Tecnica recoleccion-camiones.md
 └── Scripts/
     ├── Linux/
     │   ├── RL-APP-01/
     │   ├── RL-FW-01/
     │   ├── RL-MON-01/
     │   ├── RL-PROXY-01/
-    │   └── RL-XXX-XX/                 # Plantillas comunes
+    │   └── RL-XXX-XX/                   # Configuración común
     └── Windows/
-        ├── Windows-Server-2012-R2/   # Scripts compartidos por los DC
-        └── Windows/                  # Utilidades del host
+        ├── Windows Server 2012 r2/      # Scripts compartidos por los DC
+        └── Windows/                     # Utilidades del host
 ```
+
+> La carpeta `Documentacion/Anexos/` y sus cuatro archivos son incorporaciones propuestas; las demás rutas reflejan los nombres presentes en el paquete revisado.
+
+## Documentación complementaria y anexos
+
+Los siguientes documentos complementan la documentación técnica principal. Se conservan separados para facilitar su mantenimiento y consulta; no sustituyen el código ni los scripts vigentes.
+
+| Documento | Alcance | Acceso |
+|---|---|---|
+| **Diccionario Tecnico RecoleccionUY.md** | Inventario y responsabilidad de archivos de las tres aplicaciones Laravel y de la infraestructura. | [Ver documentación](<Documentacion/Anexos/Diccionario Tecnico RecoleccionUY.md>) |
+| **Orden de Despliegue RecoleccionUY.md** | Secuencia de preparación y ejecución por servidor, respetando las dependencias entre servicios. | [Ver documentación](<Documentacion/Anexos/Orden de Despliegue RecoleccionUY.md>) |
+| **Instructivo de Despliegue RecoleccionUY.md** | Procedimientos de configuración, despliegue y verificación de las aplicaciones y la infraestructura. | [Ver documentación](<Documentacion/Anexos/Instructivo de Despliegue RecoleccionUY.md>) |
+| **WS-DC-XX RecoleccionUY.md** | Configuración conjunta de `WS-DC-01` y `WS-DC-02`: AD DS, DNS, DHCP, replicación e integración de servicios. | [Ver documentación](<Documentacion/Anexos/WS-DC-XX RecoleccionUY.md>) |
+
+**Ubicación:** `Documentacion/Anexos/`. Los enlaces funcionarán cuando se incorporen estos cuatro archivos con exactamente esos nombres.
+
+**Criterio de mantenimiento:** la documentación técnica de cada servidor y aplicación sigue siendo la referencia particular de sus componentes. Los anexos proporcionan vistas transversales, inventarios y procedimientos de despliegue. Ante diferencias, deben contrastarse con los archivos de código y scripts correspondientes.
