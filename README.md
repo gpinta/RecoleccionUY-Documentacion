@@ -120,7 +120,7 @@ Los siguientes documentos complementan la documentación técnica principal. Se 
 | **Diccionario Tecnico RecoleccionUY.md** | Inventario y responsabilidad de archivos de las tres aplicaciones Laravel y de la infraestructura. | [Ver documentación](<Documentacion/Anexos/Diccionario Tecnico RecoleccionUY.md>) |
 | **Orden de Despliegue RecoleccionUY.md** | Secuencia de preparación y ejecución por servidor, respetando las dependencias entre servicios. | [Ver documentación](<Documentacion/Anexos/Orden de Despliegue RecoleccionUY.md>) |
 | **Instructivo de Despliegue RecoleccionUY.md** | Procedimientos de configuración, despliegue y verificación de las aplicaciones y la infraestructura. | [Ver documentación](<Documentacion/Anexos/Instructivo de Despliegue RecoleccionUY.md>) |
-| **WS-DC-XX RecoleccionUY.md** | Configuración conjunta de `WS-DC-01` y `WS-DC-02`: AD DS, DNS, DHCP, replicación e integración de servicios. | [Ver documentación](<Documentacion/Anexos/WS-DC-XX RecoleccionUY.md>) |
+| **WS-DC-XX RecoleccionUY.md** | Configuración conjunta de `WS-DC-01` y `WS-DC-02`: AD DS, DNS, DHCP, replicación e integración de servicios. | [Ver documentación](<Documentacion/Anexos/Configuracion WS-DC-XX RecoleccionUY.md>) |
 
 **Ubicación:** `Documentacion/Anexos/`. Los enlaces funcionarán cuando se incorporen estos cuatro archivos con exactamente esos nombres.
 
