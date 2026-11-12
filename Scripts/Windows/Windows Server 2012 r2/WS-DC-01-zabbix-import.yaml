@@ -1,0 +1,183 @@
+zabbix_export:
+  version: '7.0'
+  host_groups:
+  - uuid: d1ea627b4ee04333b84290bb7f9b50a2
+    name: Recolección UY / Windows
+  hosts:
+  - host: WS-DC-01
+    name: WS-DC-01
+    templates:
+    - name: Windows by Zabbix agent
+    groups:
+    - name: Recolección UY / Windows
+    interfaces:
+    - ip: 192.168.10.20
+      interface_ref: if1
+    items:
+    - name: Windows - Eventos Seguridad y cuentas
+      type: ZABBIX_ACTIVE
+      key: eventlog[Security,,,,^(4625|4740|4771|4720|4726)$,30,skip]
+      delay: 30s
+      history: 14d
+      value_type: LOG
+      trends: '0'
+      triggers:
+      - expression: logeventid(/WS-DC-01/eventlog[Security,,,,^(4625|4740|4771|4720|4726)$,30,skip],,"^4740$")=1
+        recovery_mode: NONE
+        name: Windows Security - Evento 4740
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Security,,,,^(4625|4740|4771|4720|4726)$,30,skip],,"^4720$")=1
+        recovery_mode: NONE
+        name: Windows Security - Evento 4720
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Security,,,,^(4625|4740|4771|4720|4726)$,30,skip],,"^4726$")=1
+        recovery_mode: NONE
+        name: Windows Security - Evento 4726
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+    - name: Windows - Eventos Hardware, disco y reinicios
+      type: ZABBIX_ACTIVE
+      key: eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip]
+      delay: 30s
+      history: 14d
+      value_type: LOG
+      trends: '0'
+      triggers:
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^7$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 7
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^11$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 11
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^51$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 51
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^153$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 153
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^41$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 41
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[System,,,,^(7|11|51|153|41|6008)$,30,skip],,"^6008$")=1
+        recovery_mode: NONE
+        name: Windows System - Evento 6008
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+    - name: Windows - Eventos AD DS y replicacion
+      type: ZABBIX_ACTIVE
+      key: eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip]
+      delay: 30s
+      history: 14d
+      value_type: LOG
+      trends: '0'
+      triggers:
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1863$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1863
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1083$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1083
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1311$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1311
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1865$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1865
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1925$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1925
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^1988$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 1988
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[Directory Service,,,,^(1863|1083|1311|1865|1925|1988|2042)$,30,skip],,"^2042$")=1
+        recovery_mode: NONE
+        name: Windows Directory Service - Evento 2042
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+    - name: Windows - Eventos DNS Server
+      type: ZABBIX_ACTIVE
+      key: eventlog[DNS Server,,,,^(4013|4000|4004|4015)$,30,skip]
+      delay: 30s
+      history: 14d
+      value_type: LOG
+      trends: '0'
+      triggers:
+      - expression: logeventid(/WS-DC-01/eventlog[DNS Server,,,,^(4013|4000|4004|4015)$,30,skip],,"^4013$")=1
+        recovery_mode: NONE
+        name: Windows DNS Server - Evento 4013
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[DNS Server,,,,^(4013|4000|4004|4015)$,30,skip],,"^4000$")=1
+        recovery_mode: NONE
+        name: Windows DNS Server - Evento 4000
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[DNS Server,,,,^(4013|4000|4004|4015)$,30,skip],,"^4004$")=1
+        recovery_mode: NONE
+        name: Windows DNS Server - Evento 4004
+        priority: WARNING
+        type: MULTIPLE
+        manual_close: 'YES'
+      - expression: logeventid(/WS-DC-01/eventlog[DNS Server,,,,^(4013|4000|4004|4015)$,30,skip],,"^4015$")=1
+        recovery_mode: NONE
+        name: Windows DNS Server - Evento 4015
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+    - name: Windows - Eventos DFSR SYSVOL
+      type: ZABBIX_ACTIVE
+      key: eventlog[DFS Replication,,,,^(2213)$,30,skip]
+      delay: 30s
+      history: 14d
+      value_type: LOG
+      trends: '0'
+      triggers:
+      - expression: logeventid(/WS-DC-01/eventlog[DFS Replication,,,,^(2213)$,30,skip],,"^2213$")=1
+        recovery_mode: NONE
+        name: Windows DFS Replication - Evento 2213
+        priority: HIGH
+        type: MULTIPLE
+        manual_close: 'YES'
+    inventory_mode: DISABLED

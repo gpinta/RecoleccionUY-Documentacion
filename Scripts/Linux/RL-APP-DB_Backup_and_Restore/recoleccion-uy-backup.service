@@ -1,0 +1,15 @@
+[Unit]
+Description=Respaldo de MySQL y fotografías - Recolección UY
+Wants=docker.service
+After=docker.service
+ConditionPathIsDirectory=/srv/recoleccion-data/fotos
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/usr/local/sbin/recoleccion-uy-backup.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+UMask=0077
